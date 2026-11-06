@@ -1,1 +1,49 @@
+# Git
+.git
+.gitignore
+
+# Dependencies & Package Managers
+# Git
+.git
+.gitignore
+
+# Dependencies & Package Managers
 node_modules
+**/node_modules
+npm-debug.log*
+
+# Python cache & virtual environments
+__pycache__
+**/*.py[cod]
+.venv
+env/
+venv/
+
+# Environment files
+.env
+.env.*
+
+# OS and Editor metadata
+.DS_Store
+.idea
+.vscode
+*.md
+**/node_modules
+npm-debug.log*
+
+# Python cache & virtual environments
+__pycache__
+**/*.py[cod]
+.venv
+env/
+venv/
+
+# Environment files
+.env
+.env.*
+
+# OS and Editor metadata
+.DS_Store
+.idea
+.vscode
+*.md

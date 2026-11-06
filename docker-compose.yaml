@@ -1,30 +1,27 @@
-
-
 services:
   backend:
     container_name: python_backend
-    image: python:3.13-slim
-    working_dir: /app
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
     volumes:
       - ./backend:/app
     ports:
       - "8000:8000"
-    command: sh -c "pip install -r requirements.txt && python app.py"
+    environment:
+      - PYTHONUNBUFFERED=1
 
   frontend:
     container_name: js_frontend
-    image: node:24-alpine
-    working_dir: /app
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
     volumes:
       - ./frontend:/app
-      - frontend_node_modules:/app/node_modules
+      - /app/node_modules
     environment:
       BACKEND_URL: http://backend:8000/submit
     ports:
       - "3000:3000"
     depends_on:
       - backend
-    command: sh -c "npm install && npm start"
-
-volumes:
-  frontend_node_modules:
